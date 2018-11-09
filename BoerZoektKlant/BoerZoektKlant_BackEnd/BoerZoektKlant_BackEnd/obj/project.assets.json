@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\QuanDar\\Desktop\\mobile_dev_boer_zoekt_klanten\\BoerZoektKlant\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd.csproj",
+      "projectUniqueName": "C:\\Users\\QuanDar\\Documents\\GitHub\\quan_eu_web\\android-project\\BoerZoektKlant\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd.csproj",
       "projectName": "BoerZoektKlant_BackEnd",
-      "projectPath": "C:\\Users\\QuanDar\\Desktop\\mobile_dev_boer_zoekt_klanten\\BoerZoektKlant\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd.csproj",
+      "projectPath": "C:\\Users\\QuanDar\\Documents\\GitHub\\quan_eu_web\\android-project\\BoerZoektKlant\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd.csproj",
       "packagesPath": "C:\\Users\\QuanDar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\QuanDar\\Desktop\\mobile_dev_boer_zoekt_klanten\\BoerZoektKlant\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd\\obj\\",
+      "outputPath": "C:\\Users\\QuanDar\\Documents\\GitHub\\quan_eu_web\\android-project\\BoerZoektKlant\\BoerZoektKlant_BackEnd\\BoerZoektKlant_BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

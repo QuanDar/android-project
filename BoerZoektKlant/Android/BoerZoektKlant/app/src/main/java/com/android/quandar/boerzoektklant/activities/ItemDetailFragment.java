@@ -3,6 +3,7 @@ package com.android.quandar.boerzoektklant.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,9 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.android.quandar.boerzoektklant.R;
+import com.android.quandar.boerzoektklant.services.BackendUrl;
+import com.android.quandar.boerzoektklant.services.DownloadImageTask;
+import com.android.quandar.boerzoektklant.services.ProportionalImageView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -40,6 +44,7 @@ public class ItemDetailFragment extends Fragment {
     public static final String BUSINESS_ITEM_ADDRESS = "business_item_address";
     public static final String BUSINESS_ITEM_HOUSE_NUMBER = "business_item_house_number";
     public static final String BUSINESS_ITEM_RATING = "business_item_rating";
+    public static final String BUSINESS_ITEM_IMAGE_URL = "business_item_image_url";
 
     /**
      * The dummy content this fragment is presenting.
@@ -50,6 +55,7 @@ public class ItemDetailFragment extends Fragment {
     private String mAddress;
     private String mHouseNr;
     private float mRating;
+    private String mImageUrl;
 
     /**
      * For now hardcoded, but should be coming from DB in future.
@@ -86,6 +92,7 @@ public class ItemDetailFragment extends Fragment {
                 mAddress = getArguments().getString(BUSINESS_ITEM_ADDRESS);
                 mHouseNr = getArguments().getString(BUSINESS_ITEM_HOUSE_NUMBER);
                 mRating = getArguments().getFloat(BUSINESS_ITEM_RATING);
+                mImageUrl = getArguments().getString(BUSINESS_ITEM_IMAGE_URL);
                 setToolBarTitle(mTitle);
             }
         }
@@ -136,12 +143,16 @@ public class ItemDetailFragment extends Fragment {
         phoneNumberTextView = rootView.findViewById(R.id.phoneNumberTextView);
         addressTextView = rootView.findViewById(R.id.addressTextView);
         ratingBar = rootView.findViewById(R.id.ratingBar);
+        farmerImageUrl = rootView.findViewById(R.id.farmer_header_image);
 
         descriptionTextView.setText(mDescription);
         phoneNumberTextView.setText("Telefoonnummer: " + mPhone);
         titleTextView.setText(mTitle);
         addressTextView.setText("Address: " + mAddress + " " + mHouseNr + "\nOpen in Maps");
         ratingBar.setRating(mRating);
+
+        new DownloadImageTask((ImageView) farmerImageUrl)
+                .execute(BackendUrl.url + mImageUrl);
         return rootView;
     }
 

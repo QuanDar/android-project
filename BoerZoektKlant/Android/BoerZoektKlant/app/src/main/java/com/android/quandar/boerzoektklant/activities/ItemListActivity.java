@@ -228,6 +228,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
                     arguments.putString(ItemDetailFragment.BUSINESS_ITEM_ADDRESS, businesses.get(position).getAddress());
                     arguments.putString(ItemDetailFragment.BUSINESS_ITEM_HOUSE_NUMBER, businesses.get(position).getPhoneNumber());
                     arguments.putFloat(ItemDetailFragment.BUSINESS_ITEM_RATING, businesses.get(position).getRating());
+                    arguments.putString(ItemDetailFragment.BUSINESS_ITEM_IMAGE_URL, businesses.get(position).getImageUrl());
 
                     ItemDetailFragment fragment = new ItemDetailFragment();
                     fragment.setArguments(arguments);
@@ -243,6 +244,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
                     intent.putExtra(ItemDetailFragment.BUSINESS_ITEM_ADDRESS, businesses.get(position).getAddress());
                     intent.putExtra(ItemDetailFragment.BUSINESS_ITEM_HOUSE_NUMBER, businesses.get(position).getHouseNumber());
                     intent.putExtra(ItemDetailFragment.BUSINESS_ITEM_RATING, businesses.get(position).getRating() + "");
+                    intent.putExtra(ItemDetailFragment.BUSINESS_ITEM_IMAGE_URL, businesses.get(position).getImageUrl());
 
                     context.startActivity(intent);
                 }

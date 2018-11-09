@@ -42,7 +42,7 @@ public class ItemDetailActivity extends AppCompatActivity implements OnMapReadyC
     private static final String TITLE_TEXT = "titleText";
     private static final String RATING_NUMBER = "ratingNumber";
     private static final String DESCRIPTION_TEXT = "descriptionText";
-    private static final String FARMER_IMAGE = "farmerImage";
+    private static final String FARMER_IMAGE_URL = "farmerImageUrl";
     private static final String PHONE_NUMBER_TEXT = "phoneNumberText";
     private static final String HOUSE_NUMBER = "houseNumberText";
     public static final String LOAD_DATA = "loadData";
@@ -84,6 +84,8 @@ public class ItemDetailActivity extends AppCompatActivity implements OnMapReadyC
                             getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_HOUSE_NUMBER));
                     arguments.putFloat(ItemDetailFragment.BUSINESS_ITEM_RATING,
                             Float.parseFloat(getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_RATING)));
+                    arguments.putString(ItemDetailFragment.BUSINESS_ITEM_IMAGE_URL,
+                            getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_IMAGE_URL));
                     ItemDetailFragment fragment = new ItemDetailFragment();
                     fragment.setArguments(arguments);
                     getSupportFragmentManager().beginTransaction()
@@ -172,6 +174,7 @@ public class ItemDetailActivity extends AppCompatActivity implements OnMapReadyC
             editor.putString(ADDRESS_TEXT, getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_ADDRESS));
             editor.putString(HOUSE_NUMBER, getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_HOUSE_NUMBER));
             editor.putFloat(RATING_NUMBER, Float.parseFloat(getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_RATING)));
+            editor.putString(FARMER_IMAGE_URL, getIntent().getStringExtra(ItemDetailFragment.BUSINESS_ITEM_IMAGE_URL));
             editor.putBoolean(LOAD_DATA, true);
             //editor.putString(FARMER_IMAGE, farmerImageUrl.toString());
             editor.apply();
@@ -195,6 +198,8 @@ public class ItemDetailActivity extends AppCompatActivity implements OnMapReadyC
                 sharedPreferences.getString(HOUSE_NUMBER, "no hn "));
         arguments.putFloat(ItemDetailFragment.BUSINESS_ITEM_RATING,
                 sharedPreferences.getFloat(RATING_NUMBER, 1F));
+        arguments.putString(ItemDetailFragment.BUSINESS_ITEM_IMAGE_URL,
+                sharedPreferences.getString(FARMER_IMAGE_URL, ""));
         ItemDetailFragment fragment = new ItemDetailFragment();
         fragment.setArguments(arguments);
         getSupportFragmentManager().beginTransaction()

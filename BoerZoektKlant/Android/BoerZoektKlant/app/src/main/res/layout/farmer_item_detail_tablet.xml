@@ -21,7 +21,7 @@
 
 
             <com.android.quandar.boerzoektklant.services.ProportionalImageView
-                android:id="@+id/image"
+                android:id="@+id/farmer_header_image"
                 android:src="@drawable/farm2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +36,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Title text"
-                android:textSize="30sp" />
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:textColor="#FFFFFF"
+                />
         </FrameLayout>
 
         <LinearLayout
