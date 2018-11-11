@@ -89,7 +89,7 @@ public class ItemDetailActivity extends AppCompatActivity implements OnMapReadyC
                     ItemDetailFragment fragment = new ItemDetailFragment();
                     fragment.setArguments(arguments);
                     getSupportFragmentManager().beginTransaction()
-                            .add(R.id.item_detail_container_tablet, fragment)
+                            .add(R.id.item_detail_container_fragment_holder, fragment)
                             .commit();
                 }
             }
@@ -203,7 +203,7 @@ public class ItemDetailActivity extends AppCompatActivity implements OnMapReadyC
         ItemDetailFragment fragment = new ItemDetailFragment();
         fragment.setArguments(arguments);
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.item_detail_container_tablet, fragment)
+                .add(R.id.item_detail_container_fragment_holder, fragment)
                 .commit();
     }
 

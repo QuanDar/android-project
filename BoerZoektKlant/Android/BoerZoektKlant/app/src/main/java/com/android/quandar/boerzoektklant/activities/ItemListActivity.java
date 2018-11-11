@@ -208,7 +208,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
         // Get the type list from json string.
         List<Business> businesses = gson.fromJson(jsonString, typeToken.getType());
 
-        if (findViewById(R.id.item_detail_container_tablet) != null) {
+        if (findViewById(R.id.item_detail_container_fragment_holder) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
@@ -233,7 +233,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
                     ItemDetailFragment fragment = new ItemDetailFragment();
                     fragment.setArguments(arguments);
                     this.getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.item_detail_container_tablet, fragment)
+                            .replace(R.id.item_detail_container_fragment_holder, fragment)
                             .commit();
                 } else {
                     Context context = view.getContext();
