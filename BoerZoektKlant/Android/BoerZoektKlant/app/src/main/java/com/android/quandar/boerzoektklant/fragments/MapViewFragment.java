@@ -23,7 +23,7 @@ public class MapViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.farmer_item_detail_tablet, container, false);
+        View rootView = inflater.inflate(R.layout.farmer_item_detail_fragment, container, false);
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);

@@ -208,7 +208,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
         // Get the type list from json string.
         List<Business> businesses = gson.fromJson(jsonString, typeToken.getType());
 
-        if (findViewById(R.id.item_detail_container) != null) {
+        if (findViewById(R.id.item_detail_container_tablet) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
@@ -233,7 +233,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
                     ItemDetailFragment fragment = new ItemDetailFragment();
                     fragment.setArguments(arguments);
                     this.getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.item_detail_container, fragment)
+                            .replace(R.id.item_detail_container_tablet, fragment)
                             .commit();
                 } else {
                     Context context = view.getContext();
@@ -271,10 +271,7 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
                                     }
                                 });
                         alertDialog.show();
-
                     }
-
-
                     Toast.makeText(mContext, "Favorite saved", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -352,7 +349,6 @@ public class ItemListActivity extends AppCompatActivity implements NavigationVie
     }
 
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.

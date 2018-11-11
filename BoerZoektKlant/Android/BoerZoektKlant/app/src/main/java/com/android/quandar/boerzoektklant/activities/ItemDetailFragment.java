@@ -3,7 +3,6 @@ package com.android.quandar.boerzoektklant.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 import com.android.quandar.boerzoektklant.R;
 import com.android.quandar.boerzoektklant.services.BackendUrl;
 import com.android.quandar.boerzoektklant.services.DownloadImageTask;
-import com.android.quandar.boerzoektklant.services.ProportionalImageView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -110,7 +108,7 @@ public class ItemDetailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.farmer_item_detail_tablet, container, false);
+        View rootView = inflater.inflate(R.layout.farmer_item_detail_fragment, container, false);
 
         mMapView = (MapView) rootView.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);

@@ -27,7 +27,7 @@
         tools:listitem="@layout/recycler_list_view_farmer_item" />
 
     <FrameLayout
-        android:id="@+id/item_detail_container"
+        android:id="@+id/item_detail_container_tablet"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="3" />
